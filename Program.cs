@@ -34,6 +34,8 @@ namespace LinqV1
             {
                 Console.WriteLine("Proizvod: {0}, Barkod: {1}", proizvod.Naziv, proizvod.Barkod);
             }
+            Console.WriteLine();
+
 
             ArrayList Kolekcija = new ArrayList();
 
@@ -53,7 +55,7 @@ namespace LinqV1
             {
                 Console.WriteLine("Skladiste: {0}, Kapacitet: {1}", skladiste.Lokacija, skladiste.Kapacitet);
             }
-
+            Console.WriteLine();
 
             var sortiranje = from proizvod in proizvodi
                         orderby proizvod.Sifra, proizvod.Barkod, proizvod.ID
@@ -63,7 +65,7 @@ namespace LinqV1
             {
                 Console.WriteLine("Proizvod: {0}, Barkod: {1}, Sifra: {2}", proizvod.Naziv, proizvod.Barkod, proizvod.Sifra);
             }
-
+            Console.WriteLine();
             
             var sortiranje2 = from skladiste in Kolekcija.OfType<Skladiste>()
                         orderby skladiste.Kapacitet, skladiste.Lokacija
@@ -73,7 +75,7 @@ namespace LinqV1
             {
                 Console.WriteLine("Skladiste: {0}, Kapacitet: {1}", skladiste.Lokacija, skladiste.Kapacitet);
             }
-
+            Console.WriteLine();
 
             List<string> recenice = new List<string>
                 {
@@ -94,6 +96,7 @@ namespace LinqV1
             
             Console.WriteLine($"Broj reči 'je' (Query): {query}");
             Console.WriteLine($"Broj reči 'je' (Metoda): {metoda}");
+            Console.WriteLine();    
 
 
             var grupiranje = from proizvod in proizvodi
@@ -109,6 +112,7 @@ namespace LinqV1
                 {
                     Console.WriteLine("Proizvod: {0}", proizvod.Naziv);
                 }
+                Console.WriteLine();
             }
 
 
